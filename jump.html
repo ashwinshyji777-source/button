@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Click Me</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:black;
+    color:white;
+    font-family:Arial;
+}
+
+.container{
+    text-align:center;
+}
+
+.btn{
+    padding:15px 30px;
+    font-size:20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.prediction{
+    margin-top:30px;
+    color:yellow;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Do you want to know your future?</h1>
+
+    <button class="btn">Click Me</button>
+
+    <h2 class="prediction"></h2>
+
+</div>
+
+<script>
+
+let btn = document.querySelector(".btn")
+let predict = document.querySelector(".prediction")
+
+let moved = false
+
+btn.addEventListener("mouseover", function(){
+
+    if(!moved){
+        btn.style.marginLeft = "270px"
+        moved = true
+    }else{
+        btn.style.marginLeft = "0px"
+        moved = false
+    }
+
+})
+
+setTimeout(function(){
+
+    btn.style.display = "none"
+    predict.innerText = "Sorry, You don't have a future!"
+
+},10000)
+
+</script>
+
+</body>
+</html>
